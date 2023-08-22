@@ -13,4 +13,4 @@ This application requires registration and cannot be viewed without logging in f
 
 This application is made for people who enjoy nature and discussion. It provides users with less knowledge of nature (or just a certain species) a place to find answers and learn, but also presents users with more knowledge a place to share their wisdom. And to all users a place to enjoy the wonders of nature!
 
-This application is built using Next.js, React, MongoDB and mongoose.If you wish to clone the app, just make sure to run `npm i`on the CLI and follow up with `npm run dev`.
+This application is built using Next.js, React, MongoDB and mongoose.If you wish to clone the app, just make sure to run `npm i`on the CLI and follow up with `npm run dev`. You will also need to create a .env file for mongoDB and NextAuth credentials.

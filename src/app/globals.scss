@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* variables */
+
+$foreground-hex: #4e4e4e;
+$background-rgba: rgba(255, 255, 255, 0.9);
+$brand-green: #789877;
+$brand-green-hover: #627c62;
+$box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+/* Mixins */
+
+@mixin title {
+  font-weight: 500;
+  font-size: 28px;
+  color: $brand-green;
+  transition: 0.5s;
+  -webkit-transition: 0.4s;
+  &:hover {
+    color: $brand-green-hover;
+    cursor: pointer;
+  }
+}
+
+@mixin input {
+  background: transparent;
+  min-height: 50px;
+  border: none;
+  border-bottom: 2px solid $brand-green;
+  padding: 10px;
+  padding-left: 14px;
+  &:focus {
+    outline: none;
+  }
+}
+@mixin container {
+  background: $background-rgba;
+  box-shadow: $box-shadow;
+  border-radius: 10px;
+  margin: 1em;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*body styles */
+
+body {
+  color: $foreground-hex;
+  background-image: url("/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 16px;
+}
+
+main {
+  background: rgba(255, 255, 255, 0.5);
+  position: relative;
+  padding-bottom: 4em; /* footer height */
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* posts container */
+
+.feed {
+  background: $background-rgba;
+  box-shadow: $box-shadow;
+  border-radius: 10px;
+  width: 95%;
+  min-height: 100vh;
+  margin: 1em;
+  padding: 1em;
+}
+
+/*register page */
+
+.register-container {
+  @include container;
+  .forum-title {
+    @include title;
+  }
+  input {
+    @include input;
+    width: 100%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  button {
+    display: block;
+    background-color: $brand-green;
+    text-align: center;
+    color: #fff;
+    min-height: 50px;
+    border-radius: 15px;
+    padding: 10px 8px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    &:hover {
+      background-color: $brand-green-hover;
+    }
+  }
+  span {
+    color: $brand-green;
+    padding-left: 2px;
+  }
+}
+
+/* footer */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4em;
+  padding: 1em;
+  font-size: small;
+  background: $background-rgba;
+  box-shadow: $box-shadow;
+}
